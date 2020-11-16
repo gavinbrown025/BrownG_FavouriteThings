@@ -9,9 +9,9 @@
     padding: 10vh 10vw;
 
     video, img{
-        width: 80%;
-        height: 80%;
-        background: $gradient-opc;
+        max-width: 80%;
+        max-height: 80%;
+        //background: $gradient-opc;
         cursor: pointer;
         object-fit: contain;
     }
