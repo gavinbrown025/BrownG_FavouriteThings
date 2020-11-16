@@ -79,7 +79,7 @@ import{fetchData} from "./modules/DataMiner.js";
 
 
     function changeThumbs(thumbInfo) { 
-        let galleryThumb = document.querySelectorAll('.selection img');
+        let galleryThumb = document.querySelectorAll('.selection .thumb');
                 
         galleryThumb[0].src = `images/${thumbInfo.media1}`;
         galleryThumb[1].src = `images/${thumbInfo.media2}`;
@@ -91,16 +91,20 @@ import{fetchData} from "./modules/DataMiner.js";
             if (source === "mp4"){
                 let videoThumb = document.createElement('video');
                 videoThumb.src = thumb.src;
-                videoThumb.id = thumb.id;    
-                thumb.parentNode.replaceChild(videoThumb, thumb);
-                
+                videoThumb.id = thumb.id;
+                videoThumb.classList.add('thumb');
+
+                thumb.parentNode.replaceChild(videoThumb, thumb);      
                 videoThumb.addEventListener('click', playVideo);
+
             } if (source === "jpg") {
                 let imageThumb = document.createElement('img');
                 imageThumb.src = thumb.src;
                 imageThumb.id = thumb.id;
+                imageThumb.classList.add('thumb');
+
                 thumb.parentNode.replaceChild(imageThumb, thumb);  
-                thumb.addEventListener('click', showLargeImg);
+                imageThumb.addEventListener('click', showLargeImg);
             }
         }) 
 
@@ -134,7 +138,7 @@ import{fetchData} from "./modules/DataMiner.js";
     }
 
     function hideLightbox(event) {
-        if(event.target.id){
+        if (!event.target.duration){
             lightbox.classList.remove('showLightBox');
             lightbox.innerHTML = '';
         }
