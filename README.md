@@ -1,5 +1,6 @@
-
 <img src="images/SVG/logo.svg" alt="logo" width="200px">
+
+
 # Favourite Things App
 
 ## Just An App to help you get to know me.
