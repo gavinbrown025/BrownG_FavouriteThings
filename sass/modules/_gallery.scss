@@ -1,0 +1,31 @@
+
+
+.gallery {
+    grid-column: 1/-1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    .selection {
+        background: $gradient-opc;
+        margin: 1vw;
+        padding: .5rem 1rem;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: all 250ms ease-in-out;
+        &:hover{
+            background: $gradient-flip;
+            transform: scale(1.05);
+        }
+        &:first-of-type{margin-left: 0;}
+        &:nth-of-type(3n+3){margin-right: 0;}
+
+        img, video {
+            width: 100%;
+            object-fit: cover;
+        }
+        p {
+            margin-bottom:.5rem;
+            text-shadow: 2px 2px 2px rgba(0,0,0,.5);
+        }
+    }
+} 

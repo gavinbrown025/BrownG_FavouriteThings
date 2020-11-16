@@ -1,6 +1,61 @@
+body{
+    background-color: $bg-color;
+    display: flex;
+    justify-content: center;
+    min-width: 350px;
+}
+
+main {
+    min-width: 350px;
+    max-width: 1200px;
+    font-family: $paragraph;
+    color: $main-text-color;
+}
+
 h1 {
     color: $main-text-color;
-    font-family: 'Hammersmith One', sans-serif;
+    font-family:$header-text;
     font-size: 3rem;
-    font-kerning: -42;
+    font-kerning: $kern;
+}
+
+h2{
+    color: $main-text-color; 
+    font-family:$header-text; 
+    font-size: 2rem;
+    font-kerning: $kern;
+}
+
+p {
+    font-family: $paragraph;
+    font-size: 1.2rem;
+    line-height: 2rem;
+}
+
+.hidden{display:none}
+.showFlex{display: flex;}
+
+
+@media screen and (min-width:$tablet-bp) {
+    h1{font-size:4rem;}
+    h2{font-size: 3rem;}
+    p{font-size: 1.5rem;}
+}
+
+
+
+*{  scrollbar-width: thin;
+    scrollbar-color: rgba(223,39,91, .2) rgba(26,26,51,.2);;
+    
+    &::-webkit-scrollbar{width: 12px;}
+
+    &::-webkit-scrollbar-track {background: rgba(0,0,0,.3); }
+    &::-webkit-scrollbar-thumb {
+        background-color:rgba(223,39,91, .2) ;
+        border-radius: 20px;
+        border:none;
+        &:hover {
+            background-color: rgba(223,39,91, .3);
+        }
+    }
 }
