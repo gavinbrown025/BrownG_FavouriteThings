@@ -30,15 +30,20 @@ import{fetchData} from "./modules/DataMiner.js";
 
         gallerySection.addEventListener("click", retrieveItemInfo);
     }
+    
+    mainArrow.addEventListener('click', retrieveItemInfo);
 
     function retrieveItemInfo(event) {
         gallerySection.removeEventListener("click", retrieveItemInfo);
-
+        
         if (event.target.src){
         fetchData(`./includes/index.php?id=${event.target.id}`)
             .then(data => loadSelectedInfo(data), changeUI(event.target.id))
             .catch(err => console.log(err));
         }
+
+        mainArrow.id = parseInt(event.target.id) + 1;
+        if (mainArrow.id > 3) { mainArrow.id = 1 }
     }
     
     function loadSelectedInfo(selection) {
@@ -75,23 +80,30 @@ import{fetchData} from "./modules/DataMiner.js";
 
     function changeThumbs(thumbInfo) { 
         let galleryThumb = document.querySelectorAll('.selection img');
+                
         galleryThumb[0].src = `images/${thumbInfo.media1}`;
         galleryThumb[1].src = `images/${thumbInfo.media2}`;
         galleryThumb[2].src = `images/${thumbInfo.media3}`;
-        
+
         galleryThumb.forEach(thumb => {
             let source = String(thumb.src);
             source = source.substring(source.length - 3, source.length);
             if (source === "mp4"){
                 let videoThumb = document.createElement('video');
-                videoThumb.src = thumb.src;    
+                videoThumb.src = thumb.src;
+                videoThumb.id = thumb.id;    
                 thumb.parentNode.replaceChild(videoThumb, thumb);
                 
                 videoThumb.addEventListener('click', playVideo);
-            } else {
+            } if (source === "jpg") {
+                let imageThumb = document.createElement('img');
+                imageThumb.src = thumb.src;
+                imageThumb.id = thumb.id;
+                thumb.parentNode.replaceChild(imageThumb, thumb);  
                 thumb.addEventListener('click', showLargeImg);
             }
         }) 
+
     }
 
     function showLargeImg(thumb){
@@ -127,9 +139,6 @@ import{fetchData} from "./modules/DataMiner.js";
             lightbox.innerHTML = '';
         }
     }
-
-    mainArrow.addEventListener('click', nextFavThing);
-
 
     fetchData("./includes/index.php")
     .then(data => renderThumbs(data))
