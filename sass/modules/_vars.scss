@@ -1,11 +1,16 @@
-$my-ltblue: #5de8e5;
-$my-red: #e9275b;
-$my-white:#f0eff9;
-$my-blue:#2d4785;
-$my-dkblue: #040132;
-$my-black: #323236;
+
+$bg-color: #1A1A33;
+$bg-color-opc: #1a1a33d0;
 
 $main-text-color:#f0eff9;
 
+$gradient: linear-gradient(315deg, rgba(233,39,91,1) 0%, rgba(45,71,133,1) 60%);
+$gradient-opc: linear-gradient(315deg, rgba(233,39,91,.3) 0%, rgba(45,71,133,.3) 60%);
+$gradient-flip: linear-gradient(135deg, rgba(233,39,91,.3) 0%, rgba(45,71,133,.3) 60%);
 
 $header-text:'Hammersmith One', sans-serif;
+$paragraph: 'Cabin', sans-serif;
+$kern:-42;
+
+$tablet-bp: 768px;
+$desktop-bp: 1024px;

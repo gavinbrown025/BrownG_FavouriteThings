@@ -6,88 +6,78 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
 	<link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Cabin&display=swap" rel="stylesheet">
 
-	<title>Favourite Things</title>
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
 	<link rel="stylesheet" type="text/css" href="css/master.css">
 	<!--[if lt IE 9]><script src="js/htm5shiv.js"></script><[end if]-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"
+	integrity="sha512-IQLehpLoVS4fNzl7IfH8Iowfm5+RiMGtHykgZJl9AWMgqx0AmJ6cRWcB+GaGVtIsnC4voMfm8f2vwtY+6oPjpQ=="
+	crossorigin="anonymous"></script>
+	
+	<title>Favourite Things</title>
+
 </head>
 <body>
-	<Main class="container">
+	<main class="container">
 		
 		<section class="landing">
-			
-			<a href="" class="logo">
-				<img src="" alt="">
-			</a>
-
-			<h1 class="mainTitle">Favourite Things</h1>
-			
-			<div class="counters hidden">
-				<div data-offset="0" class="dot dot-on"></div>
-				<div data-offset="1" class="dot"></div>
-				<div data-offset="2" class="dot"></div>
-			</div>			
+			<img class="bg-image" src="images/GskyChair.jpg" alt="Home image">
+			<div class="overlay"></div>
+			<header>
+				<a href="index.html" class="logo">
+					<img src="images/SVG/logo.svg" alt="">
+				</a>
+				<h1 class="mainTitle">Favourite Things</h1>
+			</header> 
+			<div class="counters">
+				<div class="dot dot-on"></div>
+				<div class="dot"></div>
+				<div class="dot"></div>
+			</div>
 		</section>
-
+		
 		<section class="description-con">			
 			<div class="name-con">
-				<img src="" alt="">
+				<img class="sublogo" src="images/SVG/logo.svg" alt="">
 				<h2 class="desc-title">Gavin Brown</h2>
 			</div>
-
-			<img class="main-arrow" src="" alt="">
+			
+			<img class="main-arrow" src="images/SVG/main-arrow.svg" alt="">	
+			
 
 			<p class="description">
-				Lorem ipsum dolor sit, amet consectetur adipisicing elit. In facere impedit nulla maiores porro cumque repudiandae numquam nam veniam tempore!
+				An App About my favourite things and to showcase my Dev abilities? What could go wrong? So lets talk about me. Generally
+				Just everything outside is good. Ironic, since I’m working to spend my life behind a computer desk. For the more
+				detailed version, click the thumbnails below!
 			</p>
-		</section>
 
+			<div class="gallery">
+				<h2 class="hidden" class="selection-title"></h2>
 
-		<section class="gallery">
-			<h2 class="selection-title"></h2>
-
-			<div class="selection-con">
-				
-				<div class="selection">
-					<img src="" alt="" class="thumb">
-					<span class="caption"></span>
-				</div>
-				
-				<div class="selection">
-					<img src="" alt="" class="thumb">
-					<span class="caption"></span>
-				</div>
-				
-				<div class="selection">
-					<img src="" alt="" class="thumb">
-					<span class="caption"></span>
-				</div>
-				
-				<div class="selection">
-					<img src="" alt="" class="thumb">
-					<span class="caption"></span>
-				</div>
 			</div>
-
-			<aside>Damn, look at those hovers</aside>
 		</section>
+	
+		<footer class="main-footer">
+			<img src="images/SVG/back-btn.svg" alt="" class="btn back-btn hidden">
+			<img src="images/SVG/home-btn.svg" alt="" class="btn home-btn hidden">
+			<img src="images/SVG/next-btn.svg" alt="" class="btn next-btn hidden">
+		</footer>
 
+	</main>
 
-		<Section class="main-footer">
-			<img src="" alt="" class="btn back-btn">
+	<template id="gallery-template">
+		<div class="selection">
+			<p class="caption"></p>
+			<img data-index="" src="" alt="">
+		</div>
+	</template>
 
-			<a href="index.html" class="btn home-btn">
-				<img src="" alt="">
-			</a>
+	<div id="lightbox">
+		
+	</div>
+	
 
-			<img src="" alt="" class="btn next-btn">
-		</Section>
-
-	</Main>
-
-
-
-<script src="js/main.js"></script>
+<script src="js/main.js" type="module"></script>
 </body>
 </html>
