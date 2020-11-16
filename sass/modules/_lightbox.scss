@@ -10,8 +10,10 @@
 
     video, img{
         width: 80%;
+        height: 80%;
         background: $gradient-opc;
         cursor: pointer;
+        object-fit: contain;
     }
     &.showLightBox{ display: flex;}
 }
