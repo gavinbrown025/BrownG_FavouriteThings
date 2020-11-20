@@ -1,0 +1,33 @@
+
+
+SELECT f.*, GROUP_CONCAT(m.source) as source FROM tbl_favthings f LEFT JOIN tbl_favthings_media link ON link.favthing_id = f.id LEFT JOIN tbl_media m ON m.id = link.id GROUP BY f.id 
+
+
+SELECT
+    f.*,
+    GROUP_CONCAT(m.source) as source
+FROM
+    tbl_favthings f
+LEFT JOIN tbl_favthings_media link ON
+    link.favthing_id = f.id
+LEFT JOIN tbl_media m ON
+    m.id = link.id
+GROUP BY
+    f.id
+
+
+ 
+vv-- get the media and the favthingid matches id of the clicked object
+
+SELECT
+    link.id,
+    f.id AS favthing_id,
+    m.source as media
+FROM
+    tbl_favthings_media link
+JOIN tbl_favthings f ON
+    link.favthing_id = f.id
+JOIN tbl_media m ON
+    m.id = link.id
+GROUP BY
+    link.id
