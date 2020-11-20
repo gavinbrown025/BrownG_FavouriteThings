@@ -6,18 +6,17 @@
     background-color: $bg-color;
     transition: height 500ms ease-in-out;
 
-    .bg-image {
+    img {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        object-position: center;
+        object-position: center left;
     }
 
     header {
         position: absolute;
         top: 3vh;
         left: 1rem;
-        width: 100%;
         display: flex;
         flex-direction: row;
         align-items: center;
