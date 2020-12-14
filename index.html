@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
 	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
 	<link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap" rel="stylesheet">
@@ -19,8 +19,7 @@
 
 </head>
 <body>
-	<main class="container">
-		
+	<main class="container">		
 		<section class="landing">
 			<img class="bg-image" src="images/GskyChair.jpg" alt="Home image">
 			<div class="overlay"></div>
@@ -31,9 +30,9 @@
 				<h1 class="mainTitle">Favourite Things</h1>
 			</header> 
 			<div class="counters">
-				<div class="dot dot-on"></div>
-				<div class="dot"></div>
-				<div class="dot"></div>
+				<div id="1" class="dot dot-on"></div>
+				<div id="2" class="dot"></div>
+				<div id="3" class="dot"></div>
 			</div>
 		</section>
 		
@@ -43,8 +42,7 @@
 				<h2 class="desc-title">Gavin Brown</h2>
 			</div>
 			
-			<img id="1" class="main-arrow" src="images/SVG/main-arrow.svg" alt="">	
-			
+			<img id="1" class="main-arrow" src="images/SVG/main-arrow.svg" alt="">				
 
 			<p class="description">
 				An App About my favourite things and to showcase my Dev abilities? What could go wrong? So lets talk about me. Generally
@@ -54,18 +52,16 @@
 
 			<div class="gallery">
 				<h2 class="hidden" class="selection-title"></h2>
-
 			</div>
 		</section>
 	
 		<footer class="main-footer"></footer>
-
 	</main>
 
 	<template id="gallery-template">
 		<div class="selection">
 			<p class="caption"></p>
-			<img class="thumb" data-index="" src="" alt="">
+			<img class="thumb" src="" alt="">
 		</div>
 	</template>
 
