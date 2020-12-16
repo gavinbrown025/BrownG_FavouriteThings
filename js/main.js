@@ -131,7 +131,7 @@ import{fetchData} from "./modules/DataMiner.js";
         lightbox.appendChild(largeVideo);
         
         largeVideo.play();
-        largeVideo.addEventListener('click', function(){
+        largeVideo.addEventListener('click',()=>{
             if (largeVideo.paused) {
                 largeVideo.play();
             } else {
